@@ -184,5 +184,5 @@ function slowMode(){
 }
 
 // Makes sure the info is loaded before showing the user
-setTimeout(singleCards, 3000); 
-setTimeout(slowMode, 3500);
+setTimeout(singleCards, 2000); 
+setTimeout(slowMode, 2500);
