@@ -10,39 +10,47 @@
  :root {
 
   /* Primary Color */
-  --ml-primary:              #F2A68D;
-  --ml-primary-hover:        #d6866b;
+  --ml-primary:              #EE8D86;
+  --ml-primary-hover:        #eb7870;
 
    /* Main Page Styles */
-  --ml-body-bg:              #F9F4F0;
-  --ml-body-text:            #000;
+  --ml-body-bg:              #FFEEE6;
+  --ml-body-text:            #484E4C;
   --ml-body-image:           url();
-  --ml-borders:              #D5D0CC;
+  --ml-borders:              transparent;
   --ml-border-radius:        1rem;
 
   /* Navbar */
-  --ml-navbar-bg:            #000;
-  --ml-navbar-text:          rgba(255,255,255,.8);
-  --ml-navbar-text-hover:    var(--ml-primary);
+  --ml-navbar-bg:            var(--ml-primary);
+  --ml-navbar-text:          #fff;
+  --ml-navbar-text-hover:    rgba(255,255,255,.8);
 
   /* Navbar Dropdown */
-  --ml-navbar-dd-bg-hover:   rgba(255,255,255,.1);
+  --ml-navbar-dd-bg-hover:   #eb7870;
   --ml-navbar-dd-divider:    rgba(255,255,255,.125);
 
   /* Pagination Nav */
-  --ml-page-nav-bg:          #fff;
+  --ml-page-nav-bg:          var(--ml-card-bg);
   --ml-page-nav-border:      var(--ml-borders);
   --ml-page-nav-links:       var(--ml-body-text);
   --ml-page-nav-links-hover: var(--ml-primary);
 
   /* Cards */
-  --ml-card-bg:              #fff;
+  --ml-card-bg:              #FAF7F2;
   --ml-card-border:          var(--ml-borders);
-  --ml-card-header-bg:       #f5f5f5;
+  --ml-card-header-bg:       var(--ml-primary);
+
+  /* Buttons */
+  --ml-btn-primary:           var(--ml-primary);
+  --ml-btn-primary-hover:     var(--ml-primary-hover);
+  --ml-btn-primary-color:     var(--ml-body-bg);
+
+  --ml-btn-secondary:         #FDCEBE;
+  --ml-btn-secondary-color:   var(--ml-body-text);
 
   /* Main Fonts */
-  --ml-body-font:            'Montserrat', sans-serif;
-  --ml-header-font:          'Comfortaa', sans-serif;
+  --ml-body-font:            "Montserrat", sans-serif;
+  --ml-header-font:          "Varela Round", sans-serif;
 }
 
 
@@ -53,6 +61,7 @@ body {
   /* Global Text */
   color: var(--ml-body-text);
   font-family: var(--ml-body-font);
+  font-size: .9rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -85,7 +94,7 @@ body {
   content: '';
   box-sizing: border-box;
   position: absolute;
-  top: calc(50% - 50px);
+  top: calc(calc(50% - 50px) + 25vh);
   left: calc(50% - 50px);
   width: 100px;
   height: 100px;
@@ -109,15 +118,25 @@ a:hover {
 }
 
 
+hr{
+  border-color: rgba(72,78,76,0.125) !important;
+}
+
 /* Dropdowns
 /* ========================================================== */
 /* This is for navbar dropdowns only
 /* ========================================================== */
 .navbar .dropdown-menu {
+  font-size: .9rem;
+  padding-bottom: .5rem;
+  overflow: hidden;
   color: var(--ml-navbar-text) !important;
   background-color: var(--ml-navbar-bg) !important;
   border: none;
   border-radius: 0 0 var(--ml-border-radius) var(--ml-border-radius);
+  z-index: 2000;
+  min-width: 175px !important;
+  box-shadow: 0 4px 4px rgb(0 0 0 / 10%);
 }
 
 .dropdown:hover .dropdown-menu,
@@ -132,7 +151,12 @@ a:hover {
 .navbar .dropdown-item,
 .navbar .dropdown-item-text {
   color: var(--ml-navbar-text);
+  padding: .15rem .75rem;
   transition: background .2s ease-in-out;
+}
+
+.navbar .dropdown-divider{
+  margin: .25rem 0;
 }
 
 .navbar .dropdown-item:hover, 
@@ -152,6 +176,7 @@ a:hover {
 .navbar {
   background-color: var(--ml-navbar-bg) !important;
   font-family: var(--ml-header-font);
+  padding: .15rem;
 }
 
 .navbar .navbar-brand {
@@ -200,8 +225,16 @@ a:hover {
 /* ========================================================== */
 
 .footer{
-  background-color: var(--ml-navbar-bg) !important;
+  background-color: #191b1a !important;
   color: var(--ml-navbar-text) !important;
+}
+
+.footer a{
+  color: var(--ml-navbar-text) !important;
+}
+
+.footer a:hover{
+  color: var(--ml-navbar-text-hover) !important;
 }
 
 
@@ -210,11 +243,20 @@ a:hover {
 
 .card {
   background-color: var(--ml-card-bg) !important;
-  border-color: var(--ml-card-border) !important;
+  border: .5rem solid var(--ml-card-bg) !important;
   border-radius: var(--ml-border-radius);
+  transition: background-color .3s ease, border-color .3s ease;
+}
+
+a.card:hover {
+  background-color: var(--ml-primary) !important;
+  border-color: var(--ml-primary) !important;
 }
 
 .card-header {
+  padding: .75rem .75rem .5rem !important;
+  border-radius: var(--ml-border-radius) !important;
+  color: var(--ml-body-bg);
   background-color: var(--ml-card-header-bg) !important;
   border-color: var(--ml-card-border) !important;
   font-family: var(--ml-header-font);
@@ -223,4 +265,73 @@ a:hover {
 .list-group-item {
   background-color: var(--ml-card-bg) !important;
   border-color: var(--ml-card-border) !important;
+}
+
+
+/* General Page Styles
+/* ========================================================== */
+.btn{
+  transition: color .3s ease-in-out, background-color .3s ease-in-out, border-color .3s ease-in-out;
+  box-shadow: none !important;
+  border-radius: var(--ml-border-radius);
+  padding: .15rem !important;
+}
+
+.btn-primary {
+  background-color: var(--ml-btn-primary);
+  border-color: var(--ml-btn-primary);
+  color: var(--ml-btn-primary-color) !important;
+}
+
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus {
+  background-color: var(--ml-btn-primary-hover);
+  border-color: var(--ml-btn-primary-hover);
+}
+
+.btn-secondary {
+  background-color: var(--ml-btn-secondary);
+  border-color: var(--ml-btn-secondary);
+  color: var(--ml-btn-secondary-color) !important;
+}
+
+.btn-secondary:hover,
+.btn-secondary:active,
+.btn-secondary:focus {
+  background-color: var(--ml-btn-primary);
+  border-color: var(--ml-btn-primary);
+  color: var(--ml-btn-primary-color) !important;
+}
+
+
+/* Header
+/* ========================================================== */
+.page-header{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Height */
+  height: calc(30vh + 25px);
+
+  /* Background Junk */
+  background-image: url(https://images.unsplash.com/photo-1612201142850-dd8e00315ece?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D);
+  background-size: cover;
+  background-position: center;
+  background-color: var(--ml-primary);
+
+  /* Font Style */
+  font-family: var(--ml-header-font);
+  font-size: 4rem;
+  color: white;
+  text-shadow: 4px 4px 0 var(--ml-primary);
+  font-weight: 800;
+  text-align: center;
+
+}
+
+.container{
+  max-width: calc(992px - 2rem) !important;
 }

@@ -13,18 +13,18 @@ var pageURL = window.location.href;
 var designID = pageURL.split('=')[1];
 
 // Template for the character cards
-var cardTemplate = function(id, image) {
+var cardTemplate = function(id, image, owner) {
   return { 
     id,
     image,
+    owner,
     htmlTemplate: function htmlTemplate() {
       return `
-      <div class="col-xl-3 col-lg-4 col-sm-6 p-3">
-        <a href="${pageURL}?entry?=${this.id}" class="card d-block h-100 overflow-hidden" style="max-width: 540px;">
-          <h5 class="card-header text-center">${this.id}</h5>
+      <div class="col-lg-3 col-md-4 col-6 p-3">
+        <a href="${pageURL}?entry?=${this.id}" class="card d-block overflow-hidden mb-2">
 					<div style="
 
-						height: 300px;
+						padding-top: 100%;
 						background-image: url(${this.image});
 						background-size: contain;
 						background-position: center;
@@ -32,6 +32,8 @@ var cardTemplate = function(id, image) {
 
 					</div>
         </a>
+        <a href="${pageURL}?entry?=${this.id}" class="btn btn-primary btn-sm d-block mb-2">${this.id}</a>
+        <a class="btn btn-secondary btn-sm d-block">${this.owner}</a>
       </div>
       `
     }
@@ -53,10 +55,15 @@ $.getJSON(url, function (data) {
       status:     value.gsx$status.$t,
       cooldown:   value.gsx$cooldown.$t,
       designtype: value.gsx$designtype.$t,
+      bodymods:   value.gsx$bodymods.$t,
+      tails:      value.gsx$tails.$t,
+      horns:      value.gsx$horns.$t,
+      material:   value.gsx$material.$t,
+      toppings:   value.gsx$toppings.$t,
       notes:      value.gsx$notes.$t
     });
     if(index < perPage && !pageURL.includes('?=')) {
-      var tempItems = cardTemplate(value.gsx$id.$t, value.gsx$image.$t);
+      var tempItems = cardTemplate(value.gsx$id.$t, value.gsx$image.$t, value.gsx$owner.$t);
       output += tempItems.htmlTemplate();
     }
   });
@@ -86,7 +93,7 @@ function changePage() {
   $(".masterlist-entries").html("");
   var start = (currentPage - 1) * perPage;
   var output = values.slice(start, start + perPage).reduce(function (s, e) {
-      var paginateTempItems = cardTemplate(e.id, e.image);
+      var paginateTempItems = cardTemplate(e.id, e.image, e.owner);
       return s += paginateTempItems.htmlTemplate();
   }, "");
   $(".masterlist-entries").append(output);
@@ -99,67 +106,89 @@ function numPages() {
 // Outputs the single card based on the URL
 function singleCards() {
   if (pageURL.includes('?=')) {
-    newShit = values; 
+    newValues = values; 
     $(".masterlist-entries").html("");
     var output = "";
-    for (i = 0; i <= Object.keys(newShit).length; i++) {
+    for (i = 0; i <= Object.keys(newValues).length; i++) {
     	if (i == designID.replace(/[^0-9]/g,'')) {
     		var id = i - 1;
     		output = `
-    		<div class="col m-md-auto p-3" style="max-width:calc(768px - 2rem);flex: 1;">
-      		<div class="card overflow-hidden">
-              <h2 class="card-header text-center">
-                ${newShit[id].id}
-              </h2>
-              <div class="row no-gutters g-0 p-3">
-                <div class="col-md-5 my-auto p-3">
+    		<div class="col-12 my-auto">
+      		<div class="card p-2 overflow-hidden">
+            <h2 class="card-header text-center">${newValues[id].id}</h2>
+              <div class="row no-gutters g-0 p-2">
+                <div class="col-md-6 my-auto p-4">
                   <div style="
                   
                     height: 300px;
-                    background-image: url( ${newShit[id].image});
+                    background-image: url( ${newValues[id].image});
                     background-size: contain;
                     background-position: center;
                     background-repeat: no-repeat;">
                     
                   </div>
                 </div>
-                <div class="col-md-7 p-3">
-                  <ul class="list-group list-group-flush">
-  
-                    <li class="list-group-item d-flex justify-content-between">
-                      <b>Owner</b>` + newShit[id].owner + `
-                    </li>
-                    
-                    <li class="list-group-item d-flex justify-content-between">
-                      <b>Artist</b>` + newShit[id].artist + `
-                    </li>
-                    
-                    <li class="list-group-item d-flex justify-content-between">
-                      <b>Designer</b>` + newShit[id].designer + `
-                    </li>
-                    
-                    <li class="list-group-item d-flex justify-content-between">
-                      <b>Worth</b>` + newShit[id].worth + `
-                    </li>
-                    
-                    <li class="list-group-item d-flex justify-content-between">
-                      <b>Status</b>` + newShit[id].status + `
-                    </li>
-                    
-                    <li class="list-group-item d-flex justify-content-between">
-                      <b>Cooldown</b>` + newShit[id].cooldown + `
-                    </li>
-                    
-                    <li class="list-group-item d-flex justify-content-between">
-                      <b>Design Type</b>` + newShit[id].designtype + `
-                    </li>
-                    
-                    <li class="list-group-item">
-                      <b>Notes</b>
-                      <div class="ps-2">` + newShit[id].notes + `</div>
-                    </li>
-  
-                  </ul>
+                <div class="col-md-6 p-4">
+
+                  <div class="d-flex justify-content-between mb-2">
+                    <b>Owner</b>` + newValues[id].owner + `
+                  </div>
+                  
+                  <div class="d-flex justify-content-between mb-2">
+                    <b>Artist</b>` + newValues[id].artist + `
+                  </div>
+                  
+                  <div class="d-flex justify-content-between mb-2">
+                    <b>Designer</b>` + newValues[id].designer + `
+                  </div>
+                                    
+                  <hr>
+
+                  <div class="d-flex justify-content-between mb-2">
+                    <b>Worth</b>` + newValues[id].worth + `
+                  </div>
+                  
+                  <div class="d-flex justify-content-between mb-2">
+                    <b>Status</b>` + newValues[id].status + `
+                  </div>
+                  
+                  <div class="d-flex justify-content-between mb-2">
+                    <b>Cooldown</b>` + newValues[id].cooldown + `
+                  </div>
+                  
+                  <div class="d-flex justify-content-between mb-2">
+                    <b>Design Type</b>` + newValues[id].designtype + `
+                  </div>
+                                    
+                  <hr>
+
+                  <div class="d-flex justify-content-between mb-2">
+                    <b>Body Mods</b>` + newValues[id].bodymods + `
+                  </div>
+                  
+                  <div class="d-flex justify-content-between mb-2">
+                    <b>Tails</b>` + newValues[id].tails + `
+                  </div>
+                  
+                  <div class="d-flex justify-content-between mb-2">
+                    <b>Horns</b>` + newValues[id].horns + `
+                  </div>
+                  
+                  <div class="d-flex justify-content-between mb-2">
+                    <b>Material</b>` + newValues[id].material + `
+                  </div>
+                  
+                  <div class="d-flex justify-content-between mb-2">
+                    <b>Toppings</b>` + newValues[id].toppings + `
+                  </div>
+                                    
+                  <hr>
+                  
+                  <div>
+                    <b>Notes</b>
+                    <div class="ps-2">` + newValues[id].notes + `</div>
+                  </div>
+
                 </div> 
               </div>  
             </div> 
@@ -167,12 +196,17 @@ function singleCards() {
     		`
     	}
     }
-    $(".masterlist-entries").append(output).css("min-height", "calc(100vh - 200px)");
+    $(".masterlist-entries").append(output);
   }
 }
 
 // Removes the page-nav so nothing gets messed up if it's clicked while on a card
-if (pageURL.includes('?=')) {$(".page-nav").hide();}
+if (pageURL.includes('?=')) {
+  $(".next-prev-btns").removeClass('d-flex').hide();
+  $(".back-btns").show();
+}else{
+  $(".back-btns").hide();
+}
 
 // Loading Junk
 $(".masterlist-entries").addClass("hidden");
