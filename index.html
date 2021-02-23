@@ -1,167 +1,325 @@
 <!DOCTYPE html>
-<html lang = "eng">
-  <head>
-    
-    <!-- Meta Data -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Website's icon in the browser -->
-    <link rel="shortcut icon" type="image/png" href="https://cdn.discordapp.com/attachments/598260367348465665/806344402321670194/Cordelia.png"/>
+  <!-- ----------------------------------------------------------------- -->
+  <!-- About Your Site                                                   -->
+  <!-- ----------------------------------------------------------------- -->
 
-    <!-- Title of your site -->
-    <title>SweettoothIsland</title>
+  <!-- Website's icon in the browser -->
+  <link rel="shortcut icon" type="image/png" href="https://cdn.discordapp.com/attachments/598260367348465665/806344402321670194/Cordelia.png"/>
 
-    <!-- Description of your site -->
-    <meta name="description" content="The official Sharkcake masterlist!">
+  <!-- Title of your site -->
+  <title>SweettoothIsland</title>
 
+  <!-- Description of your site -->
+  <meta name="description" content="The official Sharkcake masterlist!">
 
-    <!-- Styles ------------------------------------------ -->
-    
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" 
-    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-
-
-    <!-- Optional Styles ---------------------------------- -->
-    <!-- You can safely remove these if BS styles are good enough for you! -->
-    
-    <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="styles/masterlist.css">
-
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css?family=Varela+Round|Montserrat:400,500" rel="stylesheet">
-
-  </head>
-  <body>
-    <div class="page-header">
-      
-      Sweettooth Island
-      
-    </div>
-
-    <!-- Navbar
-          (This is safe to remove if you're not a fan!) 
-    ------------------------------------------------------- -->
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-      <div class="container">
-        <a class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"><i class="bi bi-chevron-down"></i></a>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-          <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link" href="https://toyhou.se/~world/71535.sweettooth-island">Home</a></li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown">
-                News
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Prompts</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="https://toyhou.se/~world/71535.sweettooth-island/forums">Forums</a></li>
-                <li><a class="dropdown-item" href="https://www.deviantart.com/sweettooth-island">Deviantart Group</a></li>
-                <li><a class="dropdown-item" href="https://discord.com/invite/UcH7XawzfZ">Discord Server</a></li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown">
-                Species
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="https://www.deviantart.com/sweettooth-menu/gallery/68221848/resources">Traits</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Lore</a></li>
-                <li><a class="dropdown-item" href="https://oogily.github.io/sweettoothisland/">Masterlist</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="https://toyhou.se/~world/71535.sweettooth-island/characters">World Characters</a></li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown">
-                Recreation
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Players Bank</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Shell Shop</a></li>
-                <li><a class="dropdown-item" href="#">Nursery</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Adoption Center</a></li>
-              </ul>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown">
-                Resources
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="https://toyhou.se/~forums/26925.help-desk/194398.masterlist-update">Masterlist Update</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="https://toyhou.se/~world/71535.sweettooth-island/page/24253.terms-of-service">TOS</a></li>
-                <li><a class="dropdown-item" href="https://toyhou.se/~forums/26925.help-desk/194401.qna">QnA</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Leave World</a></li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+  <!-- ----------------------------------------------------------------- -->
+  <!-- Styles                                                            -->
+  <!-- ----------------------------------------------------------------- -->
   
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" 
+  integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
-    <!-- Pagination Navbar
-          (Do not remove this tho)
-    ------------------------------------------------------- -->
-    <div class="page-nav bg-white py-2 sticky-top">
-      <div class="next-prev-btns container d-flex justify-content-between">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
-        <a onclick="prevPage()" id="btn_prev" class="d-flex align-items-center text-decoration-none" style="cursor:pointer">
-          <i class="bi bi-chevron-left me-2"></i> Previous
-        </a>
+  <!-- ----------------------------------------------------------------- -->
+  <!-- Optional Styles                                                   -->
+  <!-- ----------------------------------------------------------------- -->
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" type="text/css" href="styles/charadex.css">
 
-        <a onclick="nextPage()" id="btn_next" class="d-flex align-items-center text-decoration-none" style="cursor:pointer">
-          Next <i class="bi bi-chevron-right ms-2"></i>
-        </a>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css?family=Varela+Round|Montserrat:400,500" rel="stylesheet">
 
-      </div>
-      <div class="back-btns container">
-        <a href="https://oogily.github.io/sweettoothisland/"><i class="bi bi-chevron-left me-2"></i> Back</a>
-      </div>
-    </div>
+</head>
+<body>
 
-    <!-- Main Content
-    ------------------------------------------------------- -->
-    <div class="container py-md-4 py-2" style="min-height:calc(75vh - 151px)">
-      <div class="row no-gutters masterlist-entries"></div>
-    </div>
+  <!-- ----------------------------------------------------------------- -->
+  <!-- Header                                                            -->
+  <!-- ----------------------------------------------------------------- -->
 
-    <!-- Footer
-    ------------------------------------------------------- -->
-    <div class="footer bg-dark p-5 text-center">
-
-      <!-- Your credit here! -->
-      <a class="text-reset text-decoration-none" href="">Sharkcake © oog</a>
-
-      <!-- Please keep my credit in! -->
-      <div class="mt-2"> Powered by <a class="text-decoration-none" href="https://github.com/cheeriko/charadex"><i class="bi bi-github mx-1"></i> charadex.io</a></div>
-    </div>
-    
-    <!-- JS Bundles
-    ------------------------------------------------------- -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.3/pagination.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" 
-    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-    
-    <!-- Masterlist Sheet
-    ------------------------------------------------------- -->
-    <script>
+  <div class="page-header">
       
-      var sheetID = "1K7Lbiak1V2WL75SRApWpWrqUFft6wwrlnltT14iV04M";
-      var sheetPage = "5";
+    Sweettooth Island
+    
+  </div>
 
-    </script>
-    <script src="styles/masterlist.js"></script>
+  <!-- ----------------------------------------------------------------- -->
+  <!-- Navbar                                                            -->
+  <!-- ----------------------------------------------------------------- -->
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"><i class="bi bi-chevron-down"></i></a>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link" href="https://toyhou.se/~world/71535.sweettooth-island">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown">
+              News
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Prompts</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="https://toyhou.se/~world/71535.sweettooth-island/forums">Forums</a></li>
+              <li><a class="dropdown-item" href="https://www.deviantart.com/sweettooth-island">Deviantart Group</a></li>
+              <li><a class="dropdown-item" href="https://discord.com/invite/UcH7XawzfZ">Discord Server</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown">
+              Species
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="https://www.deviantart.com/sweettooth-menu/gallery/68221848/resources">Traits</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Lore</a></li>
+              <li><a class="dropdown-item" href="https://oogily.github.io/sweettoothisland/">Masterlist</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="https://toyhou.se/~world/71535.sweettooth-island/characters">World Characters</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown">
+              Recreation
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Players Bank</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Shell Shop</a></li>
+              <li><a class="dropdown-item" href="#">Nursery</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Adoption Center</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown">
+              Resources
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="https://toyhou.se/~forums/26925.help-desk/194398.masterlist-update">Masterlist Update</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="https://toyhou.se/~world/71535.sweettooth-island/page/24253.terms-of-service">TOS</a></li>
+              <li><a class="dropdown-item" href="https://toyhou.se/~forums/26925.help-desk/194401.qna">QnA</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Leave World</a></li>
+            </ul>
+          </li>
+        </ul>
+        <!-- Search -->
+        <form class="d-inline-flex mb-md-0 mb-2">
+          <input class="form-control search" style="display:none;" type="search" id="search" placeholder="Search">
+        </form>
+        <i class="bi bi-search ms-3"></i>
+      </div>
+    </div>
+  </nav>
 
-  </body>
+
+  <!-- ----------------------------------------------------------------- -->
+  <!-- Masterlist Options                                                -->
+  <!-- ----------------------------------------------------------------- -->
+  <script>
+    
+    // Sheet information
+    let sheetID = "1K7Lbiak1V2WL75SRApWpWrqUFft6wwrlnltT14iV04M";
+    let sheetPage = "3";
+
+    // Number of items on the page at a time
+    let numOfItems = (4 * 6);
+
+    // Sort order for ascending/descending
+    // asc/desc
+    var order = "asc";
+
+  </script>
+
+  <!-- ----------------------------------------------------------------- -->
+  <!-- Masterlist                                                        -->
+  <!-- ----------------------------------------------------------------- -->
+
+  <div class="container" id="charadex-gallery">
+    <div class="py-5" style="min-height:calc(75vh - 151px)">
+
+      <!-- Top Pagination -->
+      <ul class="pagination pagination-top justify-content-center"></ul>
+
+      <!-- Masterlist Container | Itmes from 'Repeated Items' will render here -->
+      <ul class="row mx-n3 my-4 list list-unstyled"></ul>
+
+      <!-- Bottom Pagination -->
+      <ul class="pagination pagination-bottom justify-content-center"></ul>
+    </div>
+  </div>
+  
+  <!-- Repeated Item 
+  ---------------------------------------------------------------------- -->
+  <div style="display:none;"> <!-- Do not remove display: none -->
+    <!-- Container -->
+    <li class="col-lg-3 col-md-4 col-6 p-3 d-flex flex-column" id="charadex-item">
+      <!-- Card -->
+      <a href="" class="card flex-fill d-flex justify-content-center align-items-center link mb-2 p-3" oncontextmenu="return false">
+        <img class="image img-fluid rounded" style="max-height:300px;" src="">
+      </a>
+      <a class="btn btn-primary btn-sm d-block mb-2 link btnlink id" href=""></a>
+      <span class="btn btn-secondary btn-sm d-block owner"></span>
+    </li>
+  </div>
+
+
+  <!-- ----------------------------------------------------------------- -->
+  <!-- Item                                                              -->
+  <!-- ----------------------------------------------------------------- -->
+
+  <div class="container py-md-5 py-3" id="charadex-entry">
+    <a href="index.html" style="font-size:18px;"><b><i class="bi bi-chevron-double-left"></i> Back</b></a>
+    <div class="d-flex justify-content-center align-items-center mt-3" style="min-height:calc(75vh - 151px)">
+
+      <!-- Card -->
+      <ul class="list list-unstyled w-100">
+        
+        <!-- Card Guts -->
+        <div style="display:none;"> <!-- Do not remove display: none -->
+          <li class="card p-4" id="charadex-card">
+
+            <!-- Header -->
+            <h2 class="card-header text-center id"></h2>
+
+            <div class="row no-gutters mn-3">
+
+              <!-- Image -->
+              <div class="col-md-6 my-auto text-center p-4" oncontextmenu="return false">
+                <img class="image img-fluid" src="">
+              </div>
+
+              <!-- All Other Info -->
+              <div class="col-md-6 p-4">
+                  
+
+                <!-- Item -->
+                <div class="d-flex justify-content-between p-1">
+                  <b>Owner</b> <span class="owner"></span>
+                </div>
+                  
+                <!-- Item -->
+                <div class="d-flex justify-content-between p-1">
+                  <b>Artist</b> <span class="artist"></span>
+                </div>
+                  
+                <!-- Item -->
+                <div class="d-flex justify-content-between p-1">
+                  <b>Designer</b> <span class="designer"></span>
+                </div>
+                  
+                <hr>
+
+                <!-- Item -->
+                <div class="d-flex justify-content-between p-1">
+                  <b>Worth</b> <span class="worth"></span>
+                </div>
+
+                <!-- Item -->
+                <div class="d-flex justify-content-between p-1">
+                  <b>Status</b> <span class="status"></span>
+                </div>
+                
+                <!-- Item -->
+                <div class="d-flex justify-content-between p-1">
+                  <b>Cooldown</b> <span class="cooldown"></span>
+                </div>
+                  
+                <!-- Item -->
+                <div class="d-flex justify-content-between p-1">
+                  <b>Design Type</b> <span class="designtype"></span>
+                </div>
+                
+                <!-- Item -->
+                <div class="d-flex justify-content-between p-1">
+                  <b>Rarity</b> <span class="rarity"></span>
+                </div>
+                  
+                <hr>
+                
+                <!-- Item -->
+                <div class="d-flex justify-content-between p-1">
+                  <b>Body Mods</b> <span class="bodymods"></span>
+                </div>
+                
+                <!-- Item -->
+                <div class="d-flex justify-content-between p-1">
+                  <b>Tails</b> <span class="tails"></span>
+                </div>
+                
+                <!-- Item -->
+                <div class="d-flex justify-content-between p-1">
+                  <b>Horns</b> <span class="horns"></span>
+                </div>
+                
+                <!-- Item -->
+                <div class="d-flex justify-content-between p-1">
+                  <b>Material</b> <span class="material"></span>
+                </div>
+                
+                <!-- Item -->
+                <div class="d-flex justify-content-between p-1">
+                  <b>Toppings</b> <span class="toppings"></span>
+                </div>
+
+                <hr>
+
+                <!-- Item -->
+                <div class="col-12 p-2">
+                  <b>Notes</b>
+                  <div class="ps-3 notes"></div>
+                </div>
+
+
+                <!-- Add more above this line -->
+              </div> 
+            </div> 
+          </li>  
+        </div>  
+      </ul>
+    </div>
+  </div>
+
+
+  <!-- ----------------------------------------------------------------- -->
+  <!-- Footer                                                            -->
+  <!-- ----------------------------------------------------------------- -->
+
+  <div class="footer bg-dark p-4 text-center">
+
+    <!-- Your credit here! -->
+    <a class="text-reset text-decoration-none" href="">Sharkcake © oog</a>
+
+    <!-- Please keep my credit in! -->
+    <div class="mt-2"> <a class="text-decoration-none" href="https://charadex.com">Powered by Charadex</a></div>
+  </div>
+
+
+  <!-- ----------------------------------------------------------------- -->
+  <!-- JS                                                                -->
+  <!-- ----------------------------------------------------------------- -->
+
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+  <!-- List.js -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+
+  <!-- Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+  <!-- Charadex Script -->
+  <script src="styles/charadex.js"></script>
+
+</body>
 </html>
