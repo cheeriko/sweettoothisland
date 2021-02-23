@@ -85,6 +85,7 @@ $.getJSON(sheetUrl, function(data) {
     // Hides the single entry & shows the search
     $('#charadex-entry').hide();
     $('#search').show();
+    $('.bi-search').show();
 
     // List.js Options
     let galleryOptions = {
@@ -110,6 +111,12 @@ $.getJSON(sheetUrl, function(data) {
         right: 2,
         paginationClass: 'pagination-bottom',
       }],
+      fuzzySearch: {
+        searchClass: "search",
+        location: 0,
+        threshold: 0,
+        multiSearch: false
+      }
     };
 
     // Create List
