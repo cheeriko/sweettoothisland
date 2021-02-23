@@ -98,6 +98,12 @@ $.getJSON(sheetUrl, function(data) {
         { name: 'btnlink', attr: 'href' },
         { name: 'link', attr: 'href' }
       ],
+      searchColumns: [
+        'id',
+        'owner',
+        'artist',
+        'designer'
+      ],
       item: 'charadex-item',
       page: numOfItems,
       pagination: [{
